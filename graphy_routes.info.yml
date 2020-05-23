@@ -1,0 +1,8 @@
+name: Graphy Routes
+type: module
+description: "Extends the Drupal GraphQL module to query routes based on entity bundles."
+package: GraphQL
+core: 8.x
+dependencies:
+  - graphql:graphql
+  - node:node

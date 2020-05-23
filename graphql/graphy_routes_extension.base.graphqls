@@ -1,0 +1,8 @@
+type Routes {
+  total: Int!
+  items: [Route!]
+}
+
+type Route {
+  url: String
+}
