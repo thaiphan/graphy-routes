@@ -1,0 +1,12 @@
+{
+  "name": "thaiphan/graphy_routes",
+  "type": "drupal-module",
+  "description": "Extend the Drupal 8 GraphQL module to support querying by routes",
+  "homepage": "https://github.com/thaiphan/graphy-routes",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.2",
+    "drupal/graphql": "4.x-dev"
+  },
+  "minimum-stability": "dev"
+}
