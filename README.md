@@ -47,3 +47,28 @@ You will get the following response:
   }
 }
 ```
+
+### Multilingual content
+
+You will receive the URL paths for all of your translation content.
+
+```json
+{
+  "data": {
+    "routes": {
+      "total": 3,
+      "items": [
+        {
+          "url": "/hello"
+        },
+        {
+          "url": "/it/hello"
+        },
+        {
+          "url": "/fr/hello"
+        }
+      ]
+    }
+  }
+}
+```
