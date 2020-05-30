@@ -39,10 +39,23 @@ class QueryConnection {
       return [];
     }
 
+    /** @var \Drupal\graphql\GraphQL\Buffers\EntityBuffer $buffer */
     $buffer = \Drupal::service('graphql.buffer.entity');
     $callback = $buffer->add($this->query->getEntityTypeId(), array_values($result));
     return new Deferred(function () use ($callback) {
-      return $callback();
+      /** @var \Drupal\node\NodeInterface[] $entities */
+      $entities = $callback();
+
+      $response = [];
+      foreach ($entities as $entity) {
+        $languages = $entity->getTranslationLanguages();
+
+        foreach ($languages as $language) {
+          $response[] = $entity->getTranslation($language->getId());
+        }
+      }
+
+      return $response;
     });
   }
 }
